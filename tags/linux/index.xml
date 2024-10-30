@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on Wanseo</title>
-    <link>https://anyfingdev.com/tags/linux/</link>
-    <description>Recent content in Linux on Wanseo</description>
+    <title>Linux on Wanseos</title>
+    <link>https://wanseos.github.io/tags/linux/</link>
+    <description>Recent content in Linux on Wanseos</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 26 Oct 2024 14:03:04 +0900</lastBuildDate>
-    <atom:link href="https://anyfingdev.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://wanseos.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sync File With Remote Using Rsync</title>
-      <link>https://anyfingdev.com/posts/sync-file-with-remote-using-rsync/</link>
+      <link>https://wanseos.github.io/posts/sync-file-with-remote-using-rsync/</link>
       <pubDate>Sat, 26 Oct 2024 14:03:04 +0900</pubDate>
-      <guid>https://anyfingdev.com/posts/sync-file-with-remote-using-rsync/</guid>
+      <guid>https://wanseos.github.io/posts/sync-file-with-remote-using-rsync/</guid>
       <description>A Linux command rsync example with explanation.</description>
     </item>
   </channel>
