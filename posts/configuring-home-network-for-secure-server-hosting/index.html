@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en-us"
+  dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+
+<link rel="icon" type="image/ico" href="https://anyfingdev.com//favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://anyfingdev.com//favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://anyfingdev.com//favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://anyfingdev.com//android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://anyfingdev.com//apple-touch-icon.png">
+
+<meta name="description" content="Port forwarding and other critical network configurations for secure server hosting."/>
+
+<title>
+    
+    Configuring Home Network for Secure Server Hosting | Wanseo
+    
+</title>
+
+<link rel="canonical" href="https://anyfingdev.com/posts/configuring-home-network-for-secure-server-hosting/"/>
+
+<meta property="og:url" content="https://anyfingdev.com/posts/configuring-home-network-for-secure-server-hosting/">
+  <meta property="og:site_name" content="Wanseo">
+  <meta property="og:title" content="Configuring Home Network for Secure Server Hosting">
+  <meta property="og:description" content="Port forwarding and other critical network configurations for secure server hosting.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-10-26T14:41:54+09:00">
+    <meta property="article:modified_time" content="2024-10-26T14:41:54+09:00">
+    <meta property="article:tag" content="Hosting">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/assets/combined.min.c00c2a035fbb2a06e24976e9c82e531b956522107cd3fc29939783b6e680ec3d.css" media="all">
+
+
+
+
+
+
+
+
+
+  </head>
+
+  
+
+  
+  
+  
+
+  <body class="auto">
+
+    <div class="content">
+      <header>
+        
+
+<div class="header">
+
+    
+
+    <h1 class="header-title">
+        <a href="https://anyfingdev.com/">Wanseo</a>
+    </h1>
+
+    <div class="flex">
+        
+
+        
+        
+      
+        <p class="small ">
+            <a href="/" >
+                /home
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/posts" >
+                /posts
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/projects" >
+                /projects
+            </a>
+        </p>
+        
+      
+        <p class="small ">
+            <a href="/tags" >
+                /tags
+            </a>
+        </p>
+        
+        
+    </div>
+
+    
+
+</div>
+
+      </header>
+
+      <main class="main">
+        
+
+
+
+
+
+<div class="breadcrumbs">
+    
+    <a href="/">Home</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a href="/posts/">Posts</a>
+    <span class="breadcrumbs-separator"> > </span>
+    
+    <a class="breadcrumbs-current" href="/posts/configuring-home-network-for-secure-server-hosting/">Configuring Home Network for Secure Server Hosting</a>
+</div>
+
+
+
+<div  class="autonumber" >
+
+  <div class="single-intro-container">
+
+    
+
+    <h1 class="single-title">Configuring Home Network for Secure Server Hosting</h1>
+    
+    <p class="single-summary">Port forwarding and other critical network configurations for secure server hosting.</p>
+    
+
+    
+
+    <p class="single-readtime">
+      
+      
+      
+      <time datetime="2024-10-26T14:41:54&#43;09:00">October 26, 2024</time>
+      
+
+      
+    </p>
+
+  </div>
+
+  
+
+  
+  
+
+  <div class="single-tags">
+    
+    <span>
+      <a href="https://anyfingdev.com/tags/hosting/">#Hosting</a>
+    </span>
+    
+    
+  </div>
+
+  
+  
+
+  
+
+  
+  <aside class="toc">
+    <p><strong>Table of contents</strong></p>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#port-forwarding">Port Forwarding</a></li>
+    <li><a href="#check-allowed-dhcp-ip-range">Check Allowed DHCP IP Range</a></li>
+    <li><a href="#static-ip-allocation">Static IP Allocation</a></li>
+    <li><a href="#additional-security-tips">Additional Security Tips</a></li>
+  </ul>
+</nav>
+  </aside>
+  
+
+  
+
+  <div class="single-content">
+    <p>Hosting a server from home requires a few key settings for functionality and security. Here are my recommendations for setting up port forwarding, IP allocation, and other network configurations to secure your server.</p>
+<h2 id="port-forwarding">Port Forwarding</h2>
+<p>Port forwarding directs external traffic to your server. Here’s a sample configuration for common ports:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">External Port</th>
+          <th style="text-align: left">Internal IP Address</th>
+          <th style="text-align: left">Internal Port</th>
+          <th style="text-align: left">Protocol</th>
+          <th style="text-align: left">Label</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">80 (HTTP)</td>
+          <td style="text-align: left">{local-ip}</td>
+          <td style="text-align: left">80</td>
+          <td style="text-align: left">TCP</td>
+          <td style="text-align: left">HTTP</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">443 (HTTPS)</td>
+          <td style="text-align: left">{local-ip}</td>
+          <td style="text-align: left">443</td>
+          <td style="text-align: left">TCP</td>
+          <td style="text-align: left">HTTPS</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">{ssh-port} (SSH)</td>
+          <td style="text-align: left">{local-ip}</td>
+          <td style="text-align: left">{ssh-port}</td>
+          <td style="text-align: left">TCP</td>
+          <td style="text-align: left">SSH Access</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li><strong>External Port</strong>: Accessible from outside your network (e.g., <code>80</code> for HTTP).</li>
+<li><strong>Internal IP Address</strong>: The static IP address of your server within your network (configured in Static IP Allocation).</li>
+<li><strong>Internal Port</strong>: Port your server listens on, usually matching the External Port for simplicity.</li>
+</ul>
+<p><strong>Tip</strong>: Avoid exposing default SSH port (22) directly; choose a custom SSH port to reduce vulnerability to automated scans.</p>
+<h2 id="check-allowed-dhcp-ip-range">Check Allowed DHCP IP Range</h2>
+<p>Some ISPs reserve certain IP ranges for their devices. Ensure your server’s IP is within an allowed range.</p>
+<p>Example:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">LAN Config</th>
+          <th style="text-align: left">Value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">DHCP Allowed IP Range</td>
+          <td style="text-align: left">xxx.xx.x.10 - xxx.xx.x.19</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">DHCP Reserved (Premium) IPs</td>
+          <td style="text-align: left">xxx.xx.x.20 - xxx.xx.x.29</td>
+      </tr>
+  </tbody>
+</table>
+<p>In this example, choose an IP in the range <code>xxx.xx.x.10 - xxx.xx.x.19</code> for your server.</p>
+<h2 id="static-ip-allocation">Static IP Allocation</h2>
+<p>Assigning a static IP to your server keeps it reachable at a consistent address, essential for reliable port forwarding.</p>
+<p>Example:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">MAC Address</th>
+          <th style="text-align: left">Allocated IP</th>
+          <th style="text-align: left">Label</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">AA:BB:CC:DD:EE:FF</td>
+          <td style="text-align: left">xxx.xx.x.xx</td>
+          <td style="text-align: left">Home Server</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li><strong>MAC Address</strong>: Unique ID of your server’s network interface.</li>
+<li><strong>Allocated IP</strong>: Static IP within your allowed range.</li>
+</ul>
+<h2 id="additional-security-tips">Additional Security Tips</h2>
+<ol>
+<li>
+<p><strong>Use a Firewall</strong>: Configure your router’s firewall to restrict traffic to only necessary ports. Consider additional firewall rules on the server itself for extra protection.</p>
+</li>
+<li>
+<p><strong>Enable SSH Key Authentication</strong>: Disable password login for SSH and use SSH keys instead. This adds a layer of security against unauthorized access.</p>
+</li>
+<li>
+<p><strong>Limit SSH Access to Specific IPs</strong>: If possible, configure SSH to allow access only from specific IP addresses (e.g., your work IP). This restricts SSH access further, reducing exposure.</p>
+</li>
+</ol>
+<p>Following these steps provides a secure foundation for hosting a server from home, with essential protections in place.</p>
+
+    
+  </div>
+
+  
+
+
+  
+
+  
+  
+
+<div class="single-pagination">
+    <hr />
+
+    <div class="flex">
+
+        <div class="single-pagination-prev">
+            
+            <div class="single-pagination-container-prev">
+                <div class="single-pagination-text">←</div>
+                <div class="single-pagination-text">
+                    <a href="/posts/sync-file-with-remote-using-rsync/">
+                        Sync File With Remote Using Rsync
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="single-pagination-next">
+            
+        </div>
+
+    </div>
+
+    <hr />
+</div>
+
+
+
+  
+
+  
+
+  
+  <div class="back-to-top">
+    <a href="#top">
+      back to top
+    </a>
+  </div>
+  
+
+</div>
+
+
+      </main>
+    </div>
+
+    <footer>
+      
+
+    
+    <p>Powered by
+        <a href="https://gohugo.io/">Hugo</a>
+        and
+        <a href="https://github.com/tomfran/typo">tomfran/typo</a>
+    </p>
+    
+    
+    
+
+
+
+    </footer>
+    
+  </body>
+
+  <script>
+
+  function isAuto() {
+    return document.body.classList.contains("auto");
+  }
+
+  function setTheme() {
+    if (!isAuto()) {
+      return
+    }
+
+    document.body.classList.remove("auto");
+    let cls = "light";
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      cls = "dark";
+    }
+
+    document.body.classList.add(cls);
+  }
+
+  function invertBody() {
+    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+  }
+
+  if (isAuto()) {
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(invertBody);
+  }
+
+  setTheme();
+
+</script>
+
+</html>
