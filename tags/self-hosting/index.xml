@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on Wanseos</title>
-    <link>https://wanseos.github.io/</link>
-    <description>Recent content in Home on Wanseos</description>
+    <title>Self-Hosting on Wanseos</title>
+    <link>https://wanseos.github.io/tags/self-hosting/</link>
+    <description>Recent content in Self-Hosting on Wanseos</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 03 Nov 2024 19:25:03 +0900</lastBuildDate>
-    <atom:link href="https://wanseos.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://wanseos.github.io/tags/self-hosting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setting Up Keycloak With Traefik and Postgres</title>
       <link>https://wanseos.github.io/posts/setting-up-keycloak-with-traefik-and-postgres/</link>
@@ -23,32 +23,11 @@
       <description>Port forwarding and other critical network configurations for secure server hosting.</description>
     </item>
     <item>
-      <title>Sync File With Remote Using Rsync</title>
-      <link>https://wanseos.github.io/posts/sync-file-with-remote-using-rsync/</link>
-      <pubDate>Sat, 26 Oct 2024 14:03:04 +0900</pubDate>
-      <guid>https://wanseos.github.io/posts/sync-file-with-remote-using-rsync/</guid>
-      <description>A Linux command rsync example with explanation.</description>
-    </item>
-    <item>
       <title>Setting Up Traefik for Secure Web Services</title>
       <link>https://wanseos.github.io/posts/setting-up-traefik-for-secure-web-services/</link>
       <pubDate>Sat, 26 Oct 2024 13:33:40 +0900</pubDate>
       <guid>https://wanseos.github.io/posts/setting-up-traefik-for-secure-web-services/</guid>
       <description>An example docker-compose with Traefik and Nginx</description>
-    </item>
-    <item>
-      <title>My First Post</title>
-      <link>https://wanseos.github.io/posts/my-first-post/</link>
-      <pubDate>Wed, 18 Sep 2024 16:09:30 +0900</pubDate>
-      <guid>https://wanseos.github.io/posts/my-first-post/</guid>
-      <description>&lt;p&gt;Hello, world! I write about my code, projects, and all things software development.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Projects</title>
-      <link>https://wanseos.github.io/projects/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://wanseos.github.io/projects/</guid>
-      <description>&lt;p&gt;Coming soon!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

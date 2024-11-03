@@ -6,13 +6,27 @@
     <description>Recent content in Tags on Wanseos</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 26 Oct 2024 14:41:54 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 03 Nov 2024 19:25:03 +0900</lastBuildDate>
     <atom:link href="https://wanseos.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hosting</title>
-      <link>https://wanseos.github.io/tags/hosting/</link>
+      <title>Docker</title>
+      <link>https://wanseos.github.io/tags/docker/</link>
+      <pubDate>Sun, 03 Nov 2024 19:25:03 +0900</pubDate>
+      <guid>https://wanseos.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Self-Hosting</title>
+      <link>https://wanseos.github.io/tags/self-hosting/</link>
+      <pubDate>Sun, 03 Nov 2024 19:25:03 +0900</pubDate>
+      <guid>https://wanseos.github.io/tags/self-hosting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Network</title>
+      <link>https://wanseos.github.io/tags/network/</link>
       <pubDate>Sat, 26 Oct 2024 14:41:54 +0900</pubDate>
-      <guid>https://wanseos.github.io/tags/hosting/</guid>
+      <guid>https://wanseos.github.io/tags/network/</guid>
       <description></description>
     </item>
     <item>
@@ -23,10 +37,10 @@
       <description></description>
     </item>
     <item>
-      <title>Docker</title>
-      <link>https://wanseos.github.io/tags/docker/</link>
+      <title>Traefik</title>
+      <link>https://wanseos.github.io/tags/traefik/</link>
       <pubDate>Sat, 26 Oct 2024 13:33:40 +0900</pubDate>
-      <guid>https://wanseos.github.io/tags/docker/</guid>
+      <guid>https://wanseos.github.io/tags/traefik/</guid>
       <description></description>
     </item>
   </channel>
