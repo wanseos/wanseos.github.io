@@ -211,7 +211,7 @@
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">image</span>: traefik:v2.4
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">restart</span>: unless-stopped
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">command</span>:
-</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--api.insecure=true&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--api.insecure=false&#34;</span>
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--providers.docker=true&#34;</span>
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--entrypoints.web.address=:80&#34;</span>
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--entrypoints.websecure.address=:443&#34;</span>
@@ -232,7 +232,7 @@
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">image</span>: nginx:alpine
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">restart</span>: unless-stopped
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">labels</span>:
-</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;traefik.http.routers.blog.rule=Host(`{your-domain}`)&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;traefik.http.routers.blog.rule=Host(\&#34;{your-domain}\&#34;)&#34;</span>
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;traefik.http.routers.blog.entrypoints=websecure&#34;</span>
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;traefik.http.routers.blog.tls.certresolver={your-resolver-name}&#34;</span>
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;traefik.http.routers.blog.tls.domains[0].main={your-domain}&#34;</span>
