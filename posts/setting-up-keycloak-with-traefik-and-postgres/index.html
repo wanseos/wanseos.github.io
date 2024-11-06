@@ -222,15 +222,15 @@
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">restart</span>: unless-stopped
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">command</span>:
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--api.insecure=false&#34;</span>
-</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--providers.docker=true&#34;</span>
-</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--entrypoints.web.address=:80&#34;</span>
-</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--entrypoints.websecure.address=:443&#34;</span>
-</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--certificatesresolvers.{your-resolver-name}.acme.tlschallenge=true&#34;</span>
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--certificatesresolvers.{your-resolver-name}.acme.email={your-email}&#34;</span>
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--certificatesresolvers.{your-resolver-name}.acme.storage=/traefik/acme.json&#34;</span>
-</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--entrypoints.web.http.redirections.entryPoint.to=websecure&#34;</span>
-</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--entrypoints.web.http.redirections.entryPoint.scheme=https&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--certificatesresolvers.{your-resolver-name}.acme.tlschallenge=true&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--entrypoints.web.address=:80&#34;</span>
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--entrypoints.web.http.redirections.entryPoint.permanent=true&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--entrypoints.web.http.redirections.entryPoint.scheme=https&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--entrypoints.web.http.redirections.entryPoint.to=websecure&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--entrypoints.websecure.address=:443&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--providers.docker=true&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">ports</span>:
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;80:80&#34;</span>
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;443:443&#34;</span>
