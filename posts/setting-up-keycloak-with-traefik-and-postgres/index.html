@@ -223,7 +223,7 @@
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">command</span>:
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--api.insecure=false&#34;</span>
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--certificatesresolvers.{your-resolver-name}.acme.email={your-email}&#34;</span>
-</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--certificatesresolvers.{your-resolver-name}.acme.storage=/traefik/acme.json&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--certificatesresolvers.{your-resolver-name}.acme.storage=/etc/traefik/acme.json&#34;</span>
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--certificatesresolvers.{your-resolver-name}.acme.tlschallenge=true&#34;</span>
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--entrypoints.web.address=:80&#34;</span>
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--entrypoints.web.http.redirections.entryPoint.permanent=true&#34;</span>
@@ -236,7 +236,7 @@
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;443:443&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">volumes</span>:
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;/var/run/docker.sock:/var/run/docker.sock&#34;</span>
-</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;{your-traefik-directory}:/traefik&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;{your-traefik-directory}:/etc/traefik&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="font-weight:bold">postgres</span>:
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">image</span>: postgres:16-alpine

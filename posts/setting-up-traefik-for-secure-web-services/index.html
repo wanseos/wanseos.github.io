@@ -211,7 +211,7 @@
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">command</span>:
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--api.insecure=false&#34;</span>
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--certificatesresolvers.{your-resolver-name}.acme.email={your-email}&#34;</span>
-</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--certificatesresolvers.{your-resolver-name}.acme.storage=/traefik/acme.json&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--certificatesresolvers.{your-resolver-name}.acme.storage=/etc/traefik/acme.json&#34;</span>
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--certificatesresolvers.{your-resolver-name}.acme.tlschallenge=true&#34;</span>
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--entrypoints.web.address=:80&#34;</span>
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;--entrypoints.web.http.redirections.entryPoint.permanent=true&#34;</span>
@@ -224,7 +224,7 @@
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;{https-port}:443&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">volumes</span>:
 </span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;/var/run/docker.sock:/var/run/docker.sock&#34;</span>
-</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;{your-acme-directory}:/traefik&#34;</span>
+</span></span><span style="display:flex;"><span>      - <span style="font-style:italic">&#34;{your-directory}:/etc/traefik&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>  <span style="font-weight:bold">grafana</span>:
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">image</span>: grafana/grafana-oss:8.3.4
@@ -245,8 +245,37 @@
 <h3 id="why-there-are-two-numbers-in-port-settings">Why There Are Two Numbers in Port Settings</h3>
 <p>Each port entry has two numbers: the first specifies the port on the host, and the second specifies the container&rsquo;s internal port. Here, <code>&quot;{http-port}:80&quot;</code> binds the host&rsquo;s HTTP traffic to port <code>80</code> inside the Traefik container, and <code>&quot;{https-port}:443&quot;</code> does the same for HTTPS.</p>
 <h3 id="volumes-for-traefik">Volumes for Traefik</h3>
-<p>Volumes allow Traefik to access the Docker socket and store SSL certificate data. <code>&quot;/var/run/docker.sock:/var/run/docker.sock&quot;</code> is necessary for Traefik to detect services, while <code>{your-acme-directory}:/traefik</code> ensures SSL certificates persist in acme.json. On production systems, make sure the ACME storage directory has secure permissions, as it contains sensitive certificate data.</p>
-<h3 id="docker-settings">Docker Settings</h3>
+<p>Volumes allow Traefik to access the Docker socket and store SSL certificate data. <code>&quot;/var/run/docker.sock:/var/run/docker.sock&quot;</code> is necessary for Traefik to detect services, while <code>{your-acme-directory}:/etc/traefik</code> ensures SSL certificates persist in acme.json. Mounting volumes to <code>/etc/traefik</code> allows Traefik to find configuration at startup. Traefik searches for static configuration in a file named <code>traefik.yml</code> or <code>traefik.toml</code> in</p>
+<ul>
+<li><code>/etc/traefik/</code></li>
+<li><code>$XDG_CONFIG_HOME/</code></li>
+<li><code>$HOME/.config/</code></li>
+<li><code>.</code> (the working directory).</li>
+</ul>
+<p><a href="https://doc.traefik.io/traefik/getting-started/configuration-overview/">source: https://doc.traefik.io/traefik/getting-started/configuration-overview/</a></p>
+<p>Here’s an example of the equivalent configuration:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="font-weight:bold">entryPoints</span>:
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">web</span>:
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">address</span>: <span style="font-style:italic">&#34;:80&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">http</span>:
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">redirections</span>:
+</span></span><span style="display:flex;"><span>          <span style="font-weight:bold">entryPoint</span>:
+</span></span><span style="display:flex;"><span>            <span style="font-weight:bold">permanent</span>: <span style="font-weight:bold">true</span>
+</span></span><span style="display:flex;"><span>            <span style="font-weight:bold">to</span>: websecure
+</span></span><span style="display:flex;"><span>            <span style="font-weight:bold">scheme</span>: https
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">websecure</span>:
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">address</span>: <span style="font-style:italic">&#34;:443&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">certificatesResolvers</span>:
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">your-resolver-name</span>:
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">acme</span>:
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">email</span>: your-email
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">storage</span>: /etc/traefik/acme.json
+</span></span><span style="display:flex;"><span>      <span style="font-weight:bold">tlsChallenge</span>: {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">providers</span>:
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">docker</span>: {}
+</span></span></code></pre></div><h3 id="docker-settings">Docker Settings</h3>
 <ul>
 <li><code>restart: unless-stopped</code>: Ensures both containers restart unless stopped manually, improving availability.</li>
 <li>Labels for Traefik Routing: The <code>labels</code> section in <code>grafana</code> defines rules for Traefik, such as routing to the domain specified by <code>{your-domain}</code> and using TLS for secure connections.</li>
