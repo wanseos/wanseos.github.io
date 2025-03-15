@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on Wanseos</title>
+    <title>Home on Wanseo</title>
     <link>https://wanseos.github.io/</link>
-    <description>Recent content in Home on Wanseos</description>
+    <description>Recent content in Home on Wanseo</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 03 Nov 2024 19:25:03 +0900</lastBuildDate>
@@ -48,7 +48,7 @@
       <link>https://wanseos.github.io/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://wanseos.github.io/projects/</guid>
-      <description>&lt;p&gt;Coming soon!&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;git@github.com:wanseos/django-rawgrate.git&#34;&gt;Django Rawgrate&lt;/a&gt; &lt;br&gt;&#xA;Django Rawgrate is a lightweight toolkit for managing Django migrations using raw SQL. It enables database migrations without relying on Django’s ORM, allowing for greater flexibility and full control over schema changes. By providing Python-agnostic migration scripts, Django Rawgrate simplifies versioning, execution, and rollback of database changes.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/wanseos/pycontainer&#34;&gt;Pycontainer&lt;/a&gt; &lt;br&gt;&#xA;PyContainer provides an example configuration for Visual Studio Code Dev Containers, enabling an integrated and feature-rich Python development environment. It includes dependency manager like uv and a pre-defined Dockerfile for coding, testing, and debugging within a containerized workspace.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
