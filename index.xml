@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on Wanseo</title>
+    <title>Home on Panto</title>
     <link>https://wanseos.github.io/</link>
-    <description>Recent content in Home on Wanseo</description>
+    <description>Recent content in Home on Panto</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 03 Nov 2024 19:25:03 +0900</lastBuildDate>
@@ -48,7 +48,7 @@
       <link>https://wanseos.github.io/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://wanseos.github.io/projects/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/wanseos/django-bare-migrate&#34;&gt;Django Bare Migrate&lt;/a&gt; &lt;br&gt;&#xA;Django Bare Migrate is a lightweight toolkit for managing Django migrations using raw SQL. It enables database migrations without relying on Django’s ORM, allowing for greater flexibility and full control over schema changes. By providing Python-agnostic migration scripts, Django Bare Migrate simplifies versioning, execution, and rollback of database changes.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/wanseos/python-backend-examples&#34;&gt;Python Backend Examples&lt;/a&gt; &lt;br&gt;&#xA;A collection of Python-based backend application examples.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/wanseos/django-polls-rest-api&#34;&gt;Django Polls REST API&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/wanseos/flask-polls-rest-api&#34;&gt;Flask Polls REST API&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <description>&lt;p&gt;Coming Soon!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
